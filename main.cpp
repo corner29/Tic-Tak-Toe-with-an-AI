@@ -1,5 +1,3 @@
-// A C++ Program to play tic-tac-toe 
-
 #include<bits/stdc++.h>
 using namespace std; 
 
@@ -36,8 +34,6 @@ void declareWinner(int whoseTurn)
 		printf("HUMAN has won\n"); 
 } 
 
-// A function that returns true if any of the row 
-// is crossed with the same player's move 
 bool rowCrossed(char board[][SIDE]) 
 { 
 	for (int i=0; i<SIDE; i++) 
@@ -64,8 +60,6 @@ bool columnCrossed(char board[][SIDE])
 	return(false); 
 } 
 
-// A function that returns true if any of the diagonal 
-// is crossed with the same player's move 
 bool diagonalCrossed(char board[][SIDE]) 
 { 
 	if (board[0][0] == board[1][1] && 
@@ -81,14 +75,11 @@ bool diagonalCrossed(char board[][SIDE])
 	return(false); 
 } 
 
-// A function that returns true if the game is over 
-// else it returns a false 
 bool gameOver(char board[][SIDE]) 
 { 
 	return(rowCrossed(board) || columnCrossed(board) || diagonalCrossed(board) ); 
 }
 
-// Function to calculate best score
 int minimax(char board[][SIDE], int depth, bool isAI)
 {
 	int score = 0;
@@ -155,7 +146,6 @@ int minimax(char board[][SIDE], int depth, bool isAI)
 	return 0;
 }
 
-// Function to calculate best move
 int bestMove(char board[][SIDE], int moveIndex)
 {
 	int x = -1, y = -1;
@@ -181,7 +171,6 @@ int bestMove(char board[][SIDE], int moveIndex)
 	return x*3+y;
 }
 
-// A function to play Tic-Tac-Toe 
 void playTicTacToe(int whoseTurn) 
 { 
 	char board[SIDE][SIDE]; 
